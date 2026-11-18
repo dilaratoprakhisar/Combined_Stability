@@ -64,16 +64,18 @@ begin
     share_i_2 : Lin_unshared port map( x=> x_2(I), x_Lin => x_Aff_value_next_2(I));
   end generate;
   
+    x_Aff_1 <= x_Aff_value_next_1;
+    x_Aff_2 <= x_Aff_value_next_2;
   
-  x_Aff_1 <= x_Aff_value_reg_1;
-  x_Aff_2 <= x_Aff_value_reg_2;
+--  x_Aff_1 <= x_Aff_value_reg_1;
+--  x_Aff_2 <= x_Aff_value_reg_2;
   
-  sequential : process(clk)
-	begin
-		if (rising_edge(clk)) then
-			x_Aff_value_reg_1 <= x_Aff_value_next_1;
-			x_Aff_value_reg_2 <= x_Aff_value_next_2;
-		end if;
-	end process;
+--  sequential : process(clk)
+--	begin
+--		if (rising_edge(clk)) then
+--			x_Aff_value_reg_1 <= x_Aff_value_next_1;
+--			x_Aff_value_reg_2 <= x_Aff_value_next_2;
+--		end if;
+--	end process;
 
 end Behavioral;
